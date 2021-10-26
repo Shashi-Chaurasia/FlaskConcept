@@ -10,19 +10,28 @@ db = SQLAlchemy(app)
 
 class Todo(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(255), nullable = False)
-    desc = db.Column(db.String(255), nullable = False)
+    ename = db.Column(db.String(255), nullable = False)
+    eemail = db.Column(db.String(255), nullable = False)
+    designation = db.Column(db.String(255), nullable = False)
+    salary = db.Column(db.Integer, nullable = False)
+    address = db.Column(db.String(255), nullable = False)
+    mobile = db.Column(db.String(255), nullable = False)
+    # eemail = db.Column(db.String(255), nullable = False)
     date_created = db.Column(db.DateTime(),default=datetime.utcnow)
 
     def __repr__(self):
-        return f'{self.sno} - {self.title}'
+        return f'{self.sno} - {self.ename}'
 
 @app.route("/" , methods = ['GET' , 'POST'])
 def helloWorld():
     if request.method == 'POST':
-        title = request.form['title']
-        desc = request.form['desc']
-        todo = Todo(title = title , desc = desc)
+        ename = request.form['ename']
+        eemail = request.form['eemail']
+        designation = request.form['designation']
+        salary = request.form['salary']
+        address = request.form['address']
+        mobile = request.form['mobile']
+        todo = Todo(ename = ename , eemail = eemail , designation = designation , salary = salary , address = address , mobile = mobile)
         db.session.add(todo)
         db.session.commit()
     allTodo = Todo.query.all()  
@@ -37,11 +46,19 @@ def products():
 @app.route("/update/<int:sno>" , methods = ['GET' , 'POST'])
 def update(sno):
     if request.method == 'POST':
-        title = request.form['title']
-        desc = request.form['desc']
+        ename = request.form['ename']
+        eemail = request.form['eemail']
+        designation = request.form['designation']
+        salary = request.form['salary']
+        address = request.form['address']
+        mobile = request.form['mobile']
         todo = Todo.query.filter_by(sno=sno).first()
-        todo.title = title
-        todo.desc = desc
+        todo.ename = ename
+        todo.eemail = eemail
+        todo.designation = designation
+        todo.salary = salary
+        todo.address = address
+        todo.mobile = mobile
         db.session.add(todo)
         db.session.commit()
         return redirect('/')

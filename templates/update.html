@@ -11,18 +11,40 @@
     <h1>ToDo</h1>
     <form action="" method="POST">
       <div class="mb-3 row">
-        <label for="inputTitle" class="col-sm-2 col-form-label">Update Title</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" name="title" id="inputTitle" value="{{todo.title}}" placeholder="">
+        <h3>Employee Details</h3>
+        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="ename" id="exampleFormControlInput1" value="{{todo.ename}}" placeholder="">
+        </div>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="eemail" id="exampleFormControlInput1" value="{{todo.eemail}}" placeholder="">
         </div>
       </div>
       <div class="mb-3 row">
-        <label for="inputText" class="col-sm-2 col-form-label">Description</label>
+        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="designation" id="exampleFormControlInput1" value="{{todo.designation}}" placeholder="">
+        </div>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="salary" id="exampleFormControlInput1" value="{{todo.salary}}" placeholder="">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="address" id="exampleFormControlInput1" value="{{todo.address}}" placeholder="">
+        </div>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="mobile" id="exampleFormControlInput1" value="{{todo.mobile}}" placeholder="">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-          <input type="text"  class="form-control" name="desc"  value="{{todo.desc}}" rows="3">
+          <input type="file" class="form-control" name="title" id="exampleFormControlInput1" placeholder="Employee name">
         </div>
         <div class="d-grid gap-2 col-6 mx-auto my-3">
-          <button type="submit" class="btn btn-outline-dark">Update</button>
+          <button type="submit" class="btn btn-outline-dark">Submit</button>
         </div>
 
       </div>
@@ -30,14 +52,4 @@
     </form>
 
   </div>
-
-
-   
-     
-
-     
-
-
-  </div>
-</div>
 {% endblock body %}
